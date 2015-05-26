@@ -4,3 +4,6 @@
 [submodule "pairing"]
 	path = pairing
 	url = git@github.wdf.sap.corp:D058546/pairing.git
+[submodule "ssh"]
+	path = ssh
+	url = git@github.wdf.sap.corp:D058546/ssh.git
