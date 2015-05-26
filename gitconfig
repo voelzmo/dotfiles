@@ -1,0 +1,9 @@
+[user]
+	name = Marco Voelz
+	email = marco.voelz@sap.com
+[alias]
+	history=log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[core]
+	excludesfile = /Users/d058546/.gitignore
+[merge]
+	conflictstyle = diff3

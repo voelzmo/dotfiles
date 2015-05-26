@@ -1,0 +1,29 @@
+"*":
+  core:
+    disabledPackages: [
+      "metrics"
+    ]
+    audioBeep: false
+  "exception-reporting":
+    userId: "cb5e6061-a475-de34-cb8e-c0c21043f422"
+  welcome:
+    showOnStartup: false
+  editor:
+    showInvisibles: true
+    invisibles:
+      {}
+    softTabs: false
+  minimap:
+    plugins:
+      "highlight-selected": true
+  linter:
+    {}
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+  "go-plus":
+    {}
+  "go-oracle":
+    {}
+  "linter-clojure":
+    clojureExecutablePath: "~/dev/clojure/clojure-1.6.0.jar"
+    javaExecutablePath: "/usr/bin/java"

@@ -1,0 +1,2 @@
+strict-ssl = false
+https-proxy = http://proxy.wdf.sap.corp:8080

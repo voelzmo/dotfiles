@@ -7,7 +7,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.bash_profile: bash_profile
-    ~/.bash_prompt: bash-prompt
+    ~/.bash_prompt: bash_prompt
     ~/.proxy: proxy
     ~/.ssh/config: ssh/config
     ~/.bash_profile: bash_profile
@@ -17,4 +17,5 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/dev, Creating ~/dev]
+  - [cp pairing/karabiner/private.xml ~/Library/Application\ Support/Karabiner/private.xml, copying karabiner keymaps]
 
