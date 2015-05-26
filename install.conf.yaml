@@ -12,6 +12,7 @@
     ~/.ssh/config: ssh/config
     ~/.bash_profile: bash_profile
     ~/.atom: atom/
+    ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
