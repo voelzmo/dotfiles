@@ -1,0 +1,20 @@
+- clean: ['~']
+
+- link:
+    ~/.vimrc: vimrc
+    ~/.vim: vim/
+    ~/.git-authors: pairing/git-authors
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
+    ~/.bash_profile: bash_profile
+    ~/.bash_prompt: bash-prompt
+    ~/.proxy: proxy
+    ~/.ssh/config: ssh/config
+    ~/.bash_profile: bash_profile
+    ~/Library/Application\ Support/Karabiner/private.xml: pairing/private.xml
+    ~/.atom: atom/
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/dev, Creating ~/dev]
+
