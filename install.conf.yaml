@@ -11,7 +11,7 @@
     ~/.proxy: proxy
     ~/.ssh/config: ssh/config
     ~/.bash_profile: bash_profile
-    ~/Library/Application\ Support/Karabiner/private.xml: pairing/private.xml
+    ~/Library/Application\ Support/Karabiner/private.xml: pairing/karabiner/private.xml
     ~/.atom: atom/
 
 - shell:
