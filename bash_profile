@@ -10,6 +10,9 @@ source ~/.proxy
 # enable coloring in Terminal
 source ~/.bash_prompt
 
+# set git-duet to operate on global gitconfig
+export GIT_DUET_GLOBAL=true
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
