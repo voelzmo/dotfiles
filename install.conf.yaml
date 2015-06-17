@@ -8,7 +8,7 @@
     ~/.gitignore: gitignore
     ~/.bash_profile: bash_profile
     ~/.bash_prompt: bash_prompt
-    ~/.proxy: proxy
+    ~/.proxy-conf/proxy: proxy
     ~/.ssh/config: ssh/config
     ~/.bash_profile: bash_profile
     ~/.atom: atom/

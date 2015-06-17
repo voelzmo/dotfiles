@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "proxy-settings"]
+	path = proxy-settings
+	url = git@github.wdf.sap.corp:D058546/proxy-settings.git
