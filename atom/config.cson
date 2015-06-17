@@ -10,20 +10,16 @@
     showOnStartup: false
   editor:
     showInvisibles: true
-    invisibles:
-      {}
+    invisibles: {}
     softTabs: false
   minimap:
     plugins:
       "highlight-selected": true
-  linter:
-    {}
+  linter: {}
   "autocomplete-plus":
     confirmCompletion: "enter"
-  "go-plus":
-    {}
-  "go-oracle":
-    {}
+  "go-plus": {}
+  "go-oracle": {}
   "linter-clojure":
     clojureExecutablePath: "~/dev/clojure/clojure-1.6.0.jar"
     javaExecutablePath: "/usr/bin/java"
