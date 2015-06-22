@@ -37,3 +37,6 @@
 [submodule "proxy-settings"]
 	path = proxy-settings
 	url = git@github.wdf.sap.corp:D058546/proxy-settings.git
+[submodule "intellij-colors-solarized"]
+	path = intellij-colors-solarized
+	url = git@github.com:jkaving/intellij-colors-solarized.git
