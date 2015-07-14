@@ -1,5 +1,1 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Library/Keyboard Layouts'
-let g:netrw_dirhist_2='/Library/Keyboard Layouts/Roman.bundle'
-let g:netrw_dirhist_3='/Users/d058546/dev/bosh/ci/tasks'
+let g:netrw_dirhistmax  =0
