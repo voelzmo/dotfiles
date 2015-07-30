@@ -5,7 +5,7 @@ fi
 # prefer /usr/local before others. homebrew installs things in there. otherwise e.g. git would clash
 export PATH="/usr/local/bin:$PATH"
 
-source ~/.proxy
+source ~/.proxy_settings
 
 # enable coloring in Terminal
 source ~/.bash_prompt
@@ -27,3 +27,5 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 export NVM_DIR=~/.nvm # Create this or you'll see an ugly error message when sourcing this!
 source $(brew --prefix nvm)/nvm.sh
 
+# load 'proxy' shell command to set/unset corporate proxy
+source .bash_command_proxy

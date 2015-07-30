@@ -13,7 +13,7 @@
     ~/.gitignore: gitignore
     ~/.bash_profile: bash_profile
     ~/.bash_prompt: bash_prompt
-    ~/.proxy: proxy-settings/proxy
+    ~/.bash_command_proxy: proxy-settings/bash_command_proxy
     ~/.ssh/config: ssh/config
     ~/.bash_profile: bash_profile
     ~/.atom: atom/
