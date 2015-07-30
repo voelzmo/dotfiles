@@ -9,7 +9,5 @@
 	conflictstyle = diff3
 [duet "env"]
 	git-author-name = Marco Voelz
-	mtime = 1435577401
+	mtime = 1438256753
 	git-author-email = marco.voelz@sap.com
-	git-committer-name = Stephan Weber
-	git-committer-email = stephan.weber@sap.com
