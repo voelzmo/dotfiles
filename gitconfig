@@ -11,3 +11,5 @@
 	git-author-name = Marco Voelz
 	mtime = 1438256753
 	git-author-email = marco.voelz@sap.com
+[push]
+	default = simple

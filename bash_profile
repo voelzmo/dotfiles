@@ -12,6 +12,8 @@ source ~/.bash_prompt
 
 # set git-duet to operate on global gitconfig
 export GIT_DUET_GLOBAL=true
+# set git-duet to rotate between author and committer after each commit
+export GIT_DUET_ROTATE_AUTHOR=1
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
