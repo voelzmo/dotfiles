@@ -5,8 +5,6 @@ fi
 # prefer /usr/local before others. homebrew installs things in there. otherwise e.g. git would clash
 export PATH="/usr/local/bin:$PATH"
 
-source ~/.proxy_settings
-
 # enable coloring in Terminal
 source ~/.bash_prompt
 
