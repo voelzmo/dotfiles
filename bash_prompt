@@ -9,9 +9,17 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 	export TERM='xterm-256color';
 fi;
  
-git_prompt_info() {
-  GIT_PAIR=`git config --global duet.env.git-initials | sed 's% %+%'`
-  echo -e "$GIT_PAIR"
+git_initials() {
+  local GIT_AUTHOR='';
+  local GIT_COMMITTER='';
+
+  GIT_AUTHOR="$(git config --global duet.env.git-author-initials)"
+  GIT_COMMITTER="$(git config --global duet.env.git-committer-initials)"
+  if [ -z $GIT_COMMITTER  ]; then
+    echo -e "${GIT_AUTHOR}";
+  else
+    echo -e "${GIT_AUTHOR}+${GIT_COMMITTER}";
+  fi;
 }
 
 prompt_git() {
@@ -111,8 +119,8 @@ fi;
 # Set the terminal title to the current working directory.
 PS1="\[\033]0;\w\007\]";
 PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${userStyle}\]\u"; # username
-#PS1+="\[${userStyle}\]$(git_prompt_info)"; # username
+#PS1+="\[${userStyle}\]\u"; # username
+PS1+="\[${userStyle}\]\$(git_initials)"; # username
 PS1+="\[${white}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
