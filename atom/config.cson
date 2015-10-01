@@ -2,6 +2,8 @@
   core:
     disabledPackages: [
       "metrics"
+      "linter"
+      "tree-view"
     ]
     audioBeep: false
   "exception-reporting":
@@ -23,3 +25,7 @@
   "linter-clojure":
     clojureExecutablePath: "~/dev/clojure/clojure-1.6.0.jar"
     javaExecutablePath: "/usr/bin/java"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  nuclide:
+    remoteProjectsConfig: []

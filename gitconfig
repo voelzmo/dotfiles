@@ -10,7 +10,7 @@
 	conflictstyle = diff3
 [duet "env"]
 	git-author-name = Marco Voelz
-	mtime = 1440599316
+	mtime = 1441956425
 	git-author-email = marco.voelz@sap.com
 	git-author-initials = mv
 [push]
