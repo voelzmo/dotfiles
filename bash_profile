@@ -24,9 +24,11 @@ export NVM_DIR=~/.nvm # Create this or you'll see an ugly error message when sou
 source $(brew --prefix nvm)/nvm.sh
 
 # load 'proxy' shell command to set/unset corporate proxy
-source .bash_command_proxy
+source ~/.bash_command_proxy
 
 # have rvm at the last place, so it doesn't complain about the order in PATH on every call
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export BOSH_USE_BUNDLER=true

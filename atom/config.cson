@@ -2,8 +2,7 @@
   core:
     disabledPackages: [
       "metrics"
-      "linter"
-      "tree-view"
+      "linter-rubocop"
     ]
     audioBeep: false
   "exception-reporting":
@@ -29,3 +28,5 @@
     promptWhenFileHasChangedOnDisk: false
   nuclide:
     remoteProjectsConfig: []
+  "markdown-preview":
+    useGitHubStyle: true
