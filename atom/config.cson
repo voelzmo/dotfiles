@@ -12,6 +12,7 @@
   editor:
     showInvisibles: true
     invisibles: {}
+    tabType: "soft"
     softTabs: false
   minimap:
     plugins:
