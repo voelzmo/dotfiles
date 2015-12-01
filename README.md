@@ -1,3 +1,5 @@
+## Install instructions
+
 ```sh
 # clone this repo
 git clone --recursive
@@ -10,7 +12,9 @@ wget http://hci.rwth-aachen.de/tiki-download_wiki_attachment.php?attId=793&page=
 unzip USGerman\ Keyboard\ Layout\ 0.98.zip
 sudo mv USGerman\ Keyboard\ Layout\ 0.98/Roman.bundle /Library/Keyboard\ Layouts/
 rm -rf USGerman\ Keyboard\ Layout\ 0.98
-
-# use rubymine profile
-???
 ```
+
+## TODO
+
+* backup and install atom packages
+* use rubymine profile
