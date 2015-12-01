@@ -1,16 +1,15 @@
 ```sh
-# install homebrew 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 # clone this repo
 git clone --recursive
 
 # install all the things
 ./install
 
-# install brew bundle and install all missing programs and casks
-brew tap Homebrew/bundle
-brew bundle
+# install umlauts with option key layout
+wget http://hci.rwth-aachen.de/tiki-download_wiki_attachment.php?attId=793&page=USGermanKeyboard
+unzip USGerman\ Keyboard\ Layout\ 0.98.zip
+sudo mv USGerman\ Keyboard\ Layout\ 0.98/Roman.bundle /Library/Keyboard\ Layouts/
+rm -rf USGerman\ Keyboard\ Layout\ 0.98
 
 # use rubymine profile
 ???
