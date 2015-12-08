@@ -3,13 +3,8 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/workspace, Creating ~/workspace]
-  - [ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)", Installing homebrew]
   - [brew tap Homebrew/bundle, Installing brew bundle command]
   - [brew bundle, Installing homebrew formulas]
-  - [git config --global alias.history 'log --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative', Adding git history alias]
-  - [git config --global alias.ci 'duet-commit -v', Adding git ci alias]
-  - [gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3, Adding rvm.io gpg key]
-  - [\curl -sSL https://get.rvm.io | bash -s stable, Installing rvm]
 
 - link:
     ~/.vimrc: vimrc
