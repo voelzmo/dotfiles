@@ -14,8 +14,7 @@ $ sudo mv USGerman\ Keyboard\ Layout\ 0.98/Roman.bundle /Library/Keyboard\ Layou
 $ rm -rf USGerman\ Keyboard\ Layout\ 0.98
 
 # add git aliases
-$ git config --global alias.history 'log --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
-$ git config --global alias.ci 'duet-commit -v'
+$ ./configure-git
 ```
 
 
