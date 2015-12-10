@@ -4,7 +4,7 @@
 # clone this repo
 $ git clone --recursive
 
-# install all the things
+# copy dotfiles and configure some things
 $ ./install
 
 # install umlauts with option key layout
@@ -13,12 +13,14 @@ $ unzip USGerman\ Keyboard\ Layout\ 0.98.zip
 $ sudo mv USGerman\ Keyboard\ Layout\ 0.98/Roman.bundle /Library/Keyboard\ Layouts/
 $ rm -rf USGerman\ Keyboard\ Layout\ 0.98
 
-# add git aliases
-$ ./configure-git
+# install apps using homebrew. This need to happen after the config files have been copied by the ./install script
+$ brew bundle
+
+# install atom packages
+$ apm install `cat atom_packages.list`
 ```
 
 
 ## TODO
 
-* backup and install atom packages
 * use rubymine profile

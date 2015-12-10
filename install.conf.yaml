@@ -4,7 +4,7 @@
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/workspace, Creating ~/workspace]
   - [brew tap Homebrew/bundle, Installing brew bundle command]
-  - [brew bundle, Installing homebrew formulas]
+  - [./configure-git, Setting up gitconfig]
 
 - link:
     ~/.vimrc: vimrc
