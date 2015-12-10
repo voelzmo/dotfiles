@@ -2,8 +2,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [mkdir -p ~/dev, Creating ~/dev]
-  - [cp pairing/karabiner/private.xml ~/Library/Application\ Support/Karabiner/private.xml, copying karabiner keymaps]
+  - [mkdir -p ~/workspace, Creating ~/workspace]
 
 - link:
     ~/.vimrc: vimrc
@@ -18,4 +17,3 @@
     ~/.bash_profile: bash_profile
     ~/.atom: atom/
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
-
