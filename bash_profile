@@ -18,6 +18,8 @@ eval "$(direnv hook $0)"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+# enable go vendor
+GO15VENDOREXPERIMENT=1
 
 # make nvm installed by homebrew work. 
 export NVM_DIR=~/.nvm # Create this or you'll see an ugly error message when sourcing this!
@@ -32,3 +34,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export BOSH_USE_BUNDLER=true
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}

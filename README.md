@@ -14,4 +14,7 @@ brew bundle
 
 # use rubymine profile
 ???
+
+# install atom packages
+$ apm install `cat atom_packages.list`
 ```
