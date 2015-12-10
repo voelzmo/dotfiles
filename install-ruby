@@ -1,0 +1,10 @@
+#!/bin/bash
+
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install ruby-2.1.7
+
+# don't install gem documentation, that takes often longer than the gem itself
+tee ~/.gemrc <<EOF
+---
+gem: --no-ri --no-rdoc
+EOF

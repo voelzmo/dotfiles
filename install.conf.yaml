@@ -5,6 +5,7 @@
   - [mkdir -p ~/workspace, Creating ~/workspace]
   - [brew tap Homebrew/bundle, Installing brew bundle command]
   - [./configure-git, Setting up gitconfig]
+  - [./install-ruby, Installing rvm and ruby]
 
 - link:
     ~/.vimrc: vimrc
