@@ -28,6 +28,9 @@ source $(brew --prefix nvm)/nvm.sh
 # load 'proxy' shell command to set/unset corporate proxy
 source ~/.bash_command_proxy
 
+# use homebrew's openssl when compiling other things. El Capitan brings its own libraries and doesn't link openssl anymore
+export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
+
 # have rvm at the last place, so it doesn't complain about the order in PATH on every call
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
