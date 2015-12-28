@@ -34,3 +34,6 @@
 [submodule "intellij-colors-solarized"]
 	path = intellij-colors-solarized
 	url = git@github.com:jkaving/intellij-colors-solarized.git
+[submodule "pairing"]
+	path = pairing
+	url = git@github.wdf.sap.corp:cloudfoundry/pairing.git
