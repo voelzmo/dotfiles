@@ -24,3 +24,14 @@ $ apm install `cat atom_packages.list`
 ## TODO
 
 * use rubymine profile
+
+
+## Backup Instructions
+
+```sh
+# backup atom packages
+$ apm list --installed --bare > atom_packages.list
+
+# backup homebrew packages
+$ brew bundle dump --force
+```
