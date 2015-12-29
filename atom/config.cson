@@ -14,6 +14,7 @@
     invisibles: {}
     tabType: "soft"
     softTabs: false
+    fontFamily: "Fira Mono"
   minimap:
     plugins:
       "highlight-selected": true
