@@ -14,12 +14,12 @@ export GIT_DUET_GLOBAL=true
 export GIT_DUET_ROTATE_AUTHOR=1
 
 # Load direnv, to switch gopath based on .direnv files in the current dir
-eval "$(direnv hook $0)" 
+eval "$(direnv hook $0)"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
-# make nvm installed by homebrew work. 
+# make nvm installed by homebrew work.
 export NVM_DIR=~/.nvm # Create this or you'll see an ugly error message when sourcing this!
 source $(brew --prefix nvm)/nvm.sh
 
@@ -33,3 +33,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # NOTE: If you're using bosh cli plugins (such as bosh-workspace) you should comment this line. Plugins don't work with BOSH_USE_BUNDLER!
 export BOSH_USE_BUNDLER=true
+
+alias ll='ls -la'
