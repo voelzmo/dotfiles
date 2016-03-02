@@ -35,3 +35,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export BOSH_USE_BUNDLER=true
 
 alias ll='ls -la'
+alias gocpi='cd ~/workspace/bosh-openstack-cpi-release/'
+alias godev='cd ~/workspace/bosh-openstack-cpi-dev-ci/'
+alias gobash='cd ~/workspace/bosh/'
+alias gostuff='cd ~/workspace/stuff/'
+alias gobats='cd ~/workspace/bosh-acceptance-tests/'
+alias godotfiles='cd ~/workspace/dotfiles/'
