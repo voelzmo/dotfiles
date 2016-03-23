@@ -34,10 +34,17 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # NOTE: If you're using bosh cli plugins (such as bosh-workspace) you should comment this line. Plugins don't work with BOSH_USE_BUNDLER!
 export BOSH_USE_BUNDLER=true
 
+
+export GOCPI=~/workspace/bosh-openstack-cpi-release/
+export GODEV=~/workspace/bosh-openstack-cpi-dev-ci/
+export GOBOSH=~/workspace/bosh/
+export GOSTUFF=~/workspace/stuff/
+export GOBATS=~/workspace/bosh-acceptance-tests/
+export GODOTS=~/workspace/dotfiles/
 alias ll='ls -la'
-alias gocpi='cd ~/workspace/bosh-openstack-cpi-release/'
-alias godev='cd ~/workspace/bosh-openstack-cpi-dev-ci/'
-alias gobosh='cd ~/workspace/bosh/'
-alias gostuff='cd ~/workspace/stuff/'
-alias gobats='cd ~/workspace/bosh-acceptance-tests/'
-alias godotfiles='cd ~/workspace/dotfiles/'
+alias gocpi='cd $GOCPI'
+alias godev='cd $GODEV'
+alias gobosh='cd $GOBOSH'
+alias gostuff='cd $GOSTUFF'
+alias gobats='cd $GOBATS'
+alias godots='cd $GODOTS'
