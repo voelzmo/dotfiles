@@ -9,6 +9,7 @@
       "metrics"
       "linter-rubocop"
     ]
+    telemetryConsent: "no"
     themes: [
       "one-light-ui"
       "one-light-syntax"
@@ -33,7 +34,10 @@
     useGitHubStyle: true
   minimap:
     plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
       "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
   nuclide:
     remoteProjectsConfig: []
   welcome:
