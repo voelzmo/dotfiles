@@ -1,4 +1,3 @@
-tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'git-duet/tap'
 tap 'homebrew/bundle'
