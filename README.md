@@ -7,6 +7,9 @@ $ git clone --recursive
 # copy dotfiles and configure some things
 $ ./install
 
+# install homebrew 
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # install apps using homebrew. This need to happen after the config files have been copied by the ./install script
 $ brew bundle
 
