@@ -1,34 +1,40 @@
 "*":
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+  autosave:
+    enabled: true
   core:
+    audioBeep: false
     disabledPackages: [
       "metrics"
       "linter-rubocop"
     ]
-    audioBeep: false
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  editor:
+    fontFamily: "Fira Mono"
+    invisibles: {}
+    showInvisibles: true
+    softTabs: false
+    tabType: "soft"
   "exception-reporting":
     userId: "cb5e6061-a475-de34-cb8e-c0c21043f422"
-  welcome:
-    showOnStartup: false
-  editor:
-    showInvisibles: true
-    invisibles: {}
-    tabType: "soft"
-    softTabs: false
-    fontFamily: "Fira Mono"
-  minimap:
-    plugins:
-      "highlight-selected": true
-  linter: {}
-  "autocomplete-plus":
-    confirmCompletion: "enter"
-  "go-plus": {}
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
   "go-oracle": {}
+  "go-plus": {}
+  linter: {}
   "linter-clojure":
     clojureExecutablePath: "~/dev/clojure/clojure-1.6.0.jar"
     javaExecutablePath: "/usr/bin/java"
-  "file-watcher":
-    promptWhenFileHasChangedOnDisk: false
-  nuclide:
-    remoteProjectsConfig: []
   "markdown-preview":
     useGitHubStyle: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+  nuclide:
+    remoteProjectsConfig: []
+  welcome:
+    showOnStartup: false
