@@ -4,6 +4,9 @@
 # clone this repo
 $ git clone --recursive
 
+# install homebrew
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # copy dotfiles and configure some things
 $ ./install
 
