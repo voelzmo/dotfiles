@@ -37,6 +37,7 @@ export BOSH_USE_BUNDLER=true
 
 export GOCPI=~/workspace/bosh-openstack-cpi-release/
 export GODEV=~/workspace/bosh-openstack-cpi-dev-ci/
+export GOEXT=~/workspace/bosh-openstack-cpi-shared/
 export GOBOSH=~/workspace/bosh/
 export GOSTUFF=~/workspace/stuff/
 export GOBATS=~/workspace/bosh-acceptance-tests/
@@ -45,6 +46,7 @@ export GOVALI=~/workspace/cf-openstack-validator/
 alias ll='ls -la'
 alias gocpi='cd $GOCPI'
 alias godev='cd $GODEV'
+alias goext='cd $GOEXT'
 alias gobosh='cd $GOBOSH'
 alias gostuff='cd $GOSTUFF'
 alias gobats='cd $GOBATS'
