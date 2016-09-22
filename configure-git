@@ -4,6 +4,7 @@ git config --global core.excludesfile ~/.gitignore
 # add git aliases
 git config --global alias.history 'log --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 git config --global alias.ci 'duet-commit -v'
+git config --global alias.dr "rebase -i --exec 'git duet-commit --amend --reset-author'"
 
 # use diff3 for conflicts
 git config --global merge.conflictstyle diff3
