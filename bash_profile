@@ -12,6 +12,7 @@ source ~/.bash_prompt
 export GIT_DUET_GLOBAL=true
 # set git-duet to rotate between author and committer after each commit
 export GIT_DUET_ROTATE_AUTHOR=1
+export GIT_DUET_SET_GIT_USER_CONFIG=1
 
 # Load direnv, to switch gopath based on .direnv files in the current dir
 eval "$(direnv hook $0)"
