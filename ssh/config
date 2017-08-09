@@ -1,0 +1,7 @@
+# config for virtualbox bosh-lite
+Host 192.168.50.6
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  IdentitiesOnly=yes
+  User jumpbox
+  LogLevel QUIET
