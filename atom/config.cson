@@ -8,6 +8,12 @@
     disabledPackages: [
       "metrics"
       "linter-rubocop"
+      "linter-tidy"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
     ]
     telemetryConsent: "no"
     themes: [

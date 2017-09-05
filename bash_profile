@@ -2,6 +2,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# disable homebrew analytics https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md#opting-out
+export HOMEBREW_NO_ANALYTICS=1
+
 # prefer /usr/local before others. homebrew installs things in there. otherwise e.g. git would clash
 export PATH="/usr/local/bin:$PATH"
 
@@ -22,7 +25,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 # make nvm installed by homebrew work.
 export NVM_DIR=~/.nvm # Create this or you'll see an ugly error message when sourcing this!
-source $(brew --prefix nvm)/nvm.sh
+source /usr/local/opt/nvm/nvm.sh
 
 # load 'proxy' shell command to set/unset corporate proxy
 source ~/.bash_command_proxy
@@ -52,5 +55,7 @@ alias gostuff='cd $GOSTUFF'
 alias gobats='cd $GOBATS'
 alias godots='cd $GODOTS'
 alias govali='cd $GOVALI'
+
+export LC_ALL=en_US.UTF-8
 
 export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
