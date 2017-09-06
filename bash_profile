@@ -8,6 +8,9 @@ export HOMEBREW_NO_ANALYTICS=1
 # prefer /usr/local before others. homebrew installs things in there. otherwise e.g. git would clash
 export PATH="/usr/local/bin:$PATH"
 
+# homebrew installs some apps into /usr/local/sbin, e.g. openvpn
+export PATH="/usr/local/sbin:$PATH"
+
 # enable coloring in Terminal
 source ~/.bash_prompt
 
