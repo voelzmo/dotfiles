@@ -18,3 +18,4 @@
     ~/.bash_profile: bash_profile
     ~/.atom: atom/
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
+    ~/.ssh/config: ssh/config
