@@ -49,6 +49,7 @@ export GOSTUFF=~/workspace/stuff/
 export GOBATS=~/workspace/bosh-acceptance-tests/
 export GODOTS=~/workspace/dotfiles/
 export GOVALI=~/workspace/cf-openstack-validator/
+export GOCLI=~/go/src/github.com/cloudfoundry/bosh-cli
 alias ll='ls -la'
 alias gocpi='cd $GOCPI'
 alias godev='cd $GODEV'
@@ -58,7 +59,7 @@ alias gostuff='cd $GOSTUFF'
 alias gobats='cd $GOBATS'
 alias godots='cd $GODOTS'
 alias govali='cd $GOVALI'
+alias gocli='cd $GOCLI'
 
 export LC_ALL=en_US.UTF-8
-
 export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
