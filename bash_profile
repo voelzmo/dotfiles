@@ -63,3 +63,9 @@ alias gocli='cd $GOCLI'
 
 export LC_ALL=en_US.UTF-8
 export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
+
+export HISTCONTROL=ignoredups
+export HISTIGNORE="$HISTIGNORE:ls:cd"
+export HISTSIZE=950000                      # number of commands to remember in history
+export HISTFILESIZE=950000                  # number of lines in history file
+export PROMPT_COMMAND="history -a"          # always save history after every command
