@@ -69,3 +69,17 @@ export HISTIGNORE="$HISTIGNORE:ls:cd"
 export HISTSIZE=950000                             # number of commands to remember in history
 export HISTFILESIZE=950000                         # number of lines in history file
 export PROMPT_COMMAND="history -a;$PROMPT_COMMAND" # always save history after every command
+
+_bosh() {
+        # All arguments except the first one
+        args=("${COMP_WORDS[@]:1:$COMP_CWORD}")
+
+        # Only split on newlines
+        local IFS=$'\n'
+        # Call completion (note that the first element of COMP_WORDS is
+        # the executable itself)
+        COMPREPLY=($(GO_FLAGS_COMPLETION=1 ${COMP_WORDS[0]} "${args[@]}"))
+        return 1
+}
+
+complete -o default -F _bosh bosh
