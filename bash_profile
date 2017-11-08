@@ -83,3 +83,4 @@ _bosh() {
 }
 
 complete -o default -F _bosh bosh
+alias vi=nvim

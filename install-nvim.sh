@@ -11,4 +11,6 @@ fi
 
 cd ~/.config && git clone https://github.com/manno/nvim-config-pairing nvim
 
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
 nvim
