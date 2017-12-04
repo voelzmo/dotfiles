@@ -87,3 +87,4 @@ alias vi=nvim
 
 eval "$(fasd --init auto)"
 alias v='f -e vim'
+export PATH="/usr/local/opt/openssl/bin:$PATH"
