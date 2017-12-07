@@ -17,3 +17,6 @@ Host hamburg
 
 Host paris
   HostName wdfm33795725a.dhcp.wdf.sap.corp
+
+Host tokyo
+  HostName DGKV6HMRJ1GP.dhcp.wdf.sap.corp
