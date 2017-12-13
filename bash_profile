@@ -88,3 +88,5 @@ alias vi=nvim
 eval "$(fasd --init auto)"
 alias v='f -e vim'
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH=$(brew --prefix openvpn)/sbin:$PATH
