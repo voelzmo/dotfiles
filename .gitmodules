@@ -37,3 +37,9 @@
 [submodule "pairing"]
 	path = pairing
 	url = git@github.wdf.sap.corp:bosh-openstack-cpi/pairing.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go

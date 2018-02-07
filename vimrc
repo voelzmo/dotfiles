@@ -2,7 +2,7 @@
 execute pathogen#infect() 
 
 syntax enable " enable syntax highlighting
-filetype indent on " enables filetype detection and loads indent files from ~/.vim/indent 
+filetype plugin indent on " enables filetype detection and loads indent files from ~/.vim/indent
 
 " use solarized dark theme from https://github.com/altercation/Vim-colors-solarized
 set background=dark
