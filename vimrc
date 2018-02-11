@@ -20,6 +20,7 @@ set cursorline " highlight current line
 set showmatch " highlight matching brackets
 set wildmenu " visual autocomplete for the command menu, e.g. completion for ':e ~/.vim<TAB>'
 set lazyredraw " don't redraw when it is not necessary, e.g. during execution of macros
+set hidden " allow hidden buffers
 
 " searching & finding
 set incsearch " incremental search while typing
@@ -51,6 +52,8 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 " use silver_searcher to find files instead of internal file finder (see http://www.reddit.com/r/vim/comments/1vt4dg/a_good_vimrc/)
 let g_ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" let NERDTree show hidden files
+let NERDTreeShowHidden=1
 
 " set better statusline
 if has('statusline')
