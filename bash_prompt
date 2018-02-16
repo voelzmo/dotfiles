@@ -87,6 +87,7 @@ if tput setaf 1 &> /dev/null; then
 	violet=$(tput setaf 61);
 	white=$(tput setaf 15);
 	yellow=$(tput setaf 136);
+  grey=$(tput setaf 245);
 else
 	bold='';
 	reset="\e[0m";
@@ -121,13 +122,13 @@ PS1="\[\033]0;\w\007\]";
 PS1+="\[${bold}\]\n"; # newline
 #PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${userStyle}\]\$(git_initials)"; # username
-PS1+="\[${white}\] at ";
+PS1+="\[${grey}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
-PS1+="\[${white}\] in ";
+PS1+="\[${grey}\] in ";
 PS1+="\[${green}\]\w"; # working directory
-PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
+PS1+="\$(prompt_git \"${grey} on ${violet}\")"; # Git repository details
 PS1+="\n";
-PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+PS1+="\[${grey}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
