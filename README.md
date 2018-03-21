@@ -14,7 +14,7 @@ $ ./install
 $ brew bundle
 
 # install umlauts with option key layout
-$ wget --content-disposition http://hci.rwth-aachen.de/tiki-download_wiki_attachment.php?attId=793&page=USGermanKeyboard
+$ curl -O -L -J http://hci.rwth-aachen.de/tiki-download_wiki_attachment.php?attId=793&page=USGermanKeyboard
 $ unzip USGerman\ Keyboard\ Layout\ 0.98.zip
 $ sudo mv USGerman\ Keyboard\ Layout\ 0.98/Roman.bundle /Library/Keyboard\ Layouts/
 $ rm -rf USGerman\ Keyboard\ Layout\ 0.98
