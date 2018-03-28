@@ -6,6 +6,7 @@
   - [brew tap Homebrew/bundle, Installing brew bundle command]
   - [./configure-git, Setting up gitconfig]
   - [./install-ruby, Installing rvm and ruby]
+  - [./brew-auto-update/install.sh, Installing automated brew upgrade]
 
 - link:
     ~/.vimrc: vimrc
