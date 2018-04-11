@@ -18,7 +18,12 @@ source ~/.bash_prompt
 export GIT_DUET_GLOBAL=true
 # set git-duet to rotate between author and committer after each commit
 export GIT_DUET_ROTATE_AUTHOR=1
+# use a Co-authored-by trailer rather than a Signed-off-by trailer
+export GIT_DUET_CO_AUTHORED_BY=1
+# is also implicitly set by GIT_DUET_CO_AUTHORED_BY
 export GIT_DUET_SET_GIT_USER_CONFIG=1
+# override the default value addIfDifferentNeighbor to avoid duplicate Co-authored-by trailers
+git config --global trailer.ifexists addIfDifferent
 
 # Load direnv, to switch gopath based on .direnv files in the current dir
 eval "$(direnv hook $0)"
