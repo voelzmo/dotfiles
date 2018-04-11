@@ -96,3 +96,6 @@ alias v='f -e nvim'
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH=$(brew --prefix openvpn)/sbin:$PATH
+
+# logout from lpass after 8 hours
+export LPASS_AGENT_TIMEOUT=28800
