@@ -29,7 +29,7 @@ cat > $PLIST_PATH <<EOF
   <integer>1</integer>
 
   <key>StartInterval</key>
-  <integer>600</integer>
+  <integer>86400</integer>
 
   <key>RunAtLoad</key>
   <true/>
