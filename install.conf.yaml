@@ -7,6 +7,7 @@
   - [./configure-git, Setting up gitconfig]
   - [./install-ruby, Installing rvm and ruby]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
+  - [./install-fonts.sh, Installing powerline fonts]
 
 - link:
     ~/.vimrc: vimrc
