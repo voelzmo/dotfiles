@@ -4,12 +4,7 @@ git config --global core.excludesfile ~/.gitignore
 # add git aliases
 git config --global alias.co 'checkout'
 git config --global alias.st 'status'
-git config --global alias.ci 'duet-commit -v'
-git config --global alias.dr "rebase -i --exec 'git duet-commit --amend --reset-author'"
-git config --global alias.dci 'duet-commit -v'
-git config --global alias.drv 'duet-revert'
-git config --global alias.dmg 'duet-merge'
-git config --global alias.drb "rebase -i --exec 'git duet-commit --amend --reset-author'"
+git config --global alias.ci 'commit -v'
 git config --global alias.flog "log --pretty=full"
 git config --global alias.history 'log --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 git config --global alias.lg 'log -n 10 --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
