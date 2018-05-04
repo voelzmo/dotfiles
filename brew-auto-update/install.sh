@@ -11,6 +11,7 @@ if [ -f "$PLIST_PATH" ] && launchctl list | grep --quiet "com.cloudfoundry.boshe
   launchctl unload "$PLIST_PATH"
 fi
 
+mkdir -p $(dirname $PLIST_PATH)
 echo "Creating launch agent $PLIST_PATH"
 cat > $PLIST_PATH <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
