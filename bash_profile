@@ -65,6 +65,7 @@ alias gobats='cd $GOBATS'
 alias godots='cd $GODOTS'
 alias govali='cd $GOVALI'
 alias gocli='cd $GOCLI'
+alias tmate-info="tmate display -p '#{tmate_ssh}'"
 
 export LC_ALL=en_US.UTF-8
 export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
