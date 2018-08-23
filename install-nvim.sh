@@ -7,6 +7,7 @@ brew install neovim
 
 if ! grep -q nvim ~/.bash_profile; then
         echo 'alias vi=nvim' >> ~/.bash_profile
+        echo 'alias vim=nvim' >> ~/.bash_profile
 fi
 
 mkdir -p ~/.config
