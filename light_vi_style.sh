@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-sed -i '' -e 's/export VISTYLE=dark/export VISTYLE=light/g' ./bash_profile
+sed -i '' -e 's/set background=dark/set background=light/g' ~/.config/nvim/init.vim

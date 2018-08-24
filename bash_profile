@@ -92,7 +92,6 @@ complete -o default -F _bosh bosh
 alias vi=nvim
 alias vim=nvim
 export EDITOR=nvim
-export VISTYLE=light
 
 eval "$(fasd --init auto)"
 alias v='f -e nvim'
