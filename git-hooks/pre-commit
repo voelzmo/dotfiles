@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Copy this file to .git/hooks/pre-commit in order to run shellcheck on changed files before every commit
+
+FOUND_ISSUE=false
+
+while read -r FILE; do
+  if ([[ "$FILE" == *.sh ]] || grep  -q -e '^#!\/usr\/bin\/env bash' -e '^#!\/bin\/bash' -e '^#!\/bin\/sh' "$FILE") && [[ "$FILE" != *.md ]]; then
+    echo "Running 'shellcheck $FILE'"
+    if ! shellcheck "$FILE" ; then
+      FOUND_ISSUE=true
+    fi
+  fi
+done < <(git diff --cached --name-only --diff-filter=ACM)
+
+if [ "$FOUND_ISSUE" = true ]; then
+  echo "Shellcheck found issue(s). Please fix."
+  exit 1
+fi
+
+echo "Shellcheck did not find any issue(s)."
