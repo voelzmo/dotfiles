@@ -22,6 +22,9 @@ $ unzip USGerman\ Keyboard\ Layout\ 0.98.zip
 $ sudo mv USGerman\ Keyboard\ Layout\ 0.98/Roman.bundle /Library/Keyboard\ Layouts/
 $ rm -rf USGerman\ Keyboard\ Layout\ 0.98
 
+# change default login keyboard
+$ sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
+
 # install atom packages
 $ apm install `cat atom_packages.list`
 ```
