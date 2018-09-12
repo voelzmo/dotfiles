@@ -8,7 +8,7 @@ git config --global alias.ci 'commit -v'
 git config --global alias.flog "log --pretty=full"
 git config --global alias.history 'log --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 git config --global alias.lg 'log -n 10 --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
-git config --global alias.suri 'submodule update --recursive --init'
+git config --global alias.suri 'submodule update --recursive --init --jobs 8'
 # use diff3 for conflicts
 git config --global merge.conflictstyle diff3
 
