@@ -8,10 +8,12 @@
   - [./install-ruby, Installing rvm and ruby]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
   - [./install-fonts.sh, Installing powerline fonts]
+  - [./install-nvim.sh, installing nvim]
 
 - link:
-    ~/.vimrc: vimrc
-    ~/.vim: vim/
+    ~/.config/nvim/user/after.vim: vim/after.vim
+    ~/.config/nvim/user/before.vim: vim/before.vim
+    ~/.config/nvim/user/plug.vim: vim/plug.vim
     ~/.git-authors: pairing/git-authors
     ~/.gitignore: gitignore
     ~/.bash_profile: bash_profile
