@@ -4,9 +4,12 @@ set -e
 brew uninstall neovim
 brew uninstall ctags
 
+brew install fzf
+brew install npm
+brew install ripgrep
+brew install python
 brew install neovim
 pip3 install --upgrade neovim
-brew install npm
 
 if ! grep -q nvim ~/.bash_profile; then
         echo 'alias vi=nvim' >> ~/.bash_profile
@@ -19,5 +22,5 @@ git clone https://github.com/luan/nvim ~/.config/nvim
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
-echo "wait until nvim updates"
+echo "please wait until nvim updates"
 nvim
