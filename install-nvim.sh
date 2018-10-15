@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
-
-brew uninstall neovim
-brew uninstall ctags
+brew uninstall ctags || true
 
 brew install fzf
 brew install npm
@@ -21,6 +19,3 @@ rm -rf ~/.config/nvim
 git clone https://github.com/luan/nvim ~/.config/nvim
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-
-echo "please wait until nvim updates"
-nvim
