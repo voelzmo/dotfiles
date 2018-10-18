@@ -4,3 +4,4 @@
 " ...
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'NautiluX/godown-vim'
