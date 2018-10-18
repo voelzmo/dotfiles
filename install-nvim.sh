@@ -17,5 +17,6 @@ fi
 mkdir -p ~/.config
 rm -rf ~/.config/nvim
 git clone https://github.com/luan/nvim ~/.config/nvim
+mkdir -p ~/.config/nvim/user
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags

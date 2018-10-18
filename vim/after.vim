@@ -9,3 +9,4 @@
 " let g:lightline['colorscheme'] = 'wombat'
 " ...
 
+map <Leader>nt :NERDTreeToggle<CR>
