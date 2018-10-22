@@ -68,7 +68,6 @@ alias gocli='cd $GOCLI'
 alias tmate-info="tmate display -p '#{tmate_ssh}'"
 
 export LC_ALL=en_US.UTF-8
-export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
 
 export HISTCONTROL=ignoredups
 export HISTIGNORE="$HISTIGNORE:ls:cd"
