@@ -5,3 +5,4 @@
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'NautiluX/godown-vim'
+Plug 'machakann/vim-sandwich'
