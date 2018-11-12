@@ -29,6 +29,7 @@ git config --global trailer.ifexists addIfDifferent
 eval "$(direnv hook $0)"
 
 export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 # make nvm installed by homebrew work.
