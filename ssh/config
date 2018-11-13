@@ -20,3 +20,6 @@ Host paris
 
 Host tokyo
   HostName DGKV6HMRJ1GP.dhcp.wdf.sap.corp
+
+Host oakland
+  HostName DGKW7HQAJ1GP.dhcp.wdf.sap.corp
