@@ -6,13 +6,8 @@
   - [./configure-git, Setting up gitconfig]
   - [./install-ruby, Installing rvm and ruby]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
-  - [./install-fonts.sh, Installing powerline fonts]
-  - [./install-nvim.sh, installing nvim]
 
 - link:
     ~/.zshrc: zshrc
-    ~/.config/nvim/user/after.vim: vim/after.vim
-    ~/.config/nvim/user/before.vim: vim/before.vim
-    ~/.config/nvim/user/plug.vim: vim/plug.vim
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/.tmux.conf: tmux.conf
