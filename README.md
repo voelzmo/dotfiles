@@ -24,23 +24,11 @@ $ rm -rf USGerman\ Keyboard\ Layout\ 0.98
 
 # change default login keyboard
 $ sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
-
-# install atom packages
-$ apm install `cat atom_packages.list`
 ```
-
-
-## TODO
-
-* use rubymine profile
-
 
 ## Backup Instructions
 
 ```sh
-# backup atom packages
-$ apm list --installed --bare > atom_packages.list
-
 # backup homebrew packages
 $ brew bundle dump --force
 ```

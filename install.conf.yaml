@@ -3,7 +3,6 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/workspace, Creating ~/workspace]
-  - [brew tap Homebrew/bundle, Installing brew bundle command]
   - [./configure-git, Setting up gitconfig]
   - [./install-ruby, Installing rvm and ruby]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
@@ -11,17 +10,9 @@
   - [./install-nvim.sh, installing nvim]
 
 - link:
+    ~/.zshrc: zshrc
     ~/.config/nvim/user/after.vim: vim/after.vim
     ~/.config/nvim/user/before.vim: vim/before.vim
     ~/.config/nvim/user/plug.vim: vim/plug.vim
-    ~/.git-authors: pairing/git-authors
-    ~/.gitignore: gitignore
-    ~/.bash_profile: bash_profile
-    ~/.bash_prompt: bash_prompt
-    ~/.bash_command_proxy: proxy-settings/bash_command_proxy
-    ~/.bash_profile: bash_profile
-    ~/.atom: atom/
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
-    ~/.ssh/config: ssh/config
-    ~/.tmate.conf: tmate.conf
     ~/.tmux.conf: tmux.conf
