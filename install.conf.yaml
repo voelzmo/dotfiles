@@ -21,4 +21,5 @@
       path: vscode-settings.json
 
 - shell:
+  - [brew bundle]
   - [kubectl krew install < kubectl-krew-plugins.txt]
