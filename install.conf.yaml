@@ -13,5 +13,9 @@
     ~/.zsh_plugins.txt: zsh_plugins.txt
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/.tmux.conf: tmux.conf
-    ~/.vscode/extensions/extensions.json: vscode-extensions.json
-    ~/Library/Application Support/Code/User/settings.json: vscode-settings.json
+    ~/.vscode/extensions/extensions.json:
+      create: true
+      path: vscode-extensions.json
+    ~/Library/Application Support/Code/User/settings.json:
+      create: true
+      path: vscode-settings.json
