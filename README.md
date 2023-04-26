@@ -32,4 +32,7 @@ $ sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
 ```sh
 # backup homebrew packages
 $ brew bundle dump --force
+
+# backup kubectl plugins
+$ kubectl krew list > kubectl-krew-plugins.txt
 ```

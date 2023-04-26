@@ -19,3 +19,6 @@
     ~/Library/Application Support/Code/User/settings.json:
       create: true
       path: vscode-settings.json
+
+- shell:
+  - [kubectl krew install < kubectl-krew-plugins.txt]
