@@ -1,6 +1,8 @@
 - clean: ['~']
 
 - shell:
+  - [./install-oh-my-zsh.sh, Installing oh-my-zsh]
+  - [./install-homebrew.sh, Installing Homebrew]
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/workspace, Creating ~/workspace]
   - [./configure-git, Setting up gitconfig]

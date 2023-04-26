@@ -9,10 +9,6 @@ A collection of system settings and installations, maintained using [dotbot](htt
 $ xcode-select --install
 ```
 
-```sh
-# install homebrew
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # clone this repo
 $ git clone --recursive
 
