@@ -1,6 +1,11 @@
 #!/bin/bash
 
-curl -sSL https://get.rvm.io | bash -s stable
+if [ ! -f "`which rvm`" ]; then
+  curl -sSL https://get.rvm.io | bash -s stable
+else
+  echo 'rvm already installed, doing nothing'
+fi
+
 rvm install 3.2.1
 
 # don't install gem documentation, that takes often longer than the gem itself

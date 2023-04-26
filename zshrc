@@ -68,7 +68,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby osx)
+plugins=(macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,8 +132,11 @@ alias ungron="gron --ungron"
 # enable direnv, which auto-loads .envrc files
 eval "$(direnv hook zsh)"
 
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins.txt
+# source antidote
+source /usr/local/opt/antidote/share/antidote/antidote.zsh
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
 
 
 SAPCP_CLI_AUTOCOMPLETE="/Users/d058546/Library/Caches/.sapcp/autocomplete/scripts/sapcp-autocomplete.plugin.zsh" && fpath=("${SAPCP_CLI_AUTOCOMPLETE}" $fpath) && autoload -U compinit && compinit && source "${SAPCP_CLI_AUTOCOMPLETE}"
