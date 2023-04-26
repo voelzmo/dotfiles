@@ -7,7 +7,6 @@ A collection of system settings and installations, maintained using [dotbot](htt
 ```sh
 # install apple developer tools
 $ xcode-select --install
-```
 
 # clone this repo
 $ git clone --recursive
