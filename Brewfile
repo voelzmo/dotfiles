@@ -103,7 +103,6 @@ brew "homeport/tap/dyff"
 brew "int128/kubelogin/kubelogin"
 brew "osx-cross/arm/arm-gcc-bin@8", link: true
 brew "osx-cross/avr/avr-gcc@8", link: true
-brew "qmk/qmk/qmk"
 brew "srcclr/srcclr/srcclr"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "caffeine"
