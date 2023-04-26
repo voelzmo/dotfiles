@@ -1,0 +1,32 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "latex-workshop.view.pdf.viewer": "browser",
+    "breadcrumbs.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path": "/Users/d058546/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vs-kubernetes.crd-code-completion": "disabled",
+        "vs-kubernetes.minikube-show-information-expiration": "2023-07-18T09:53:42.365Z"
+    },
+    "go.useLanguageServer": true,
+    "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.columnSelection": false,
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "redhat.telemetry.enabled": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "[python]": {
+        "editor.formatOnType": true
+    }
+}
