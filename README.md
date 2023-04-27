@@ -35,4 +35,8 @@ $ brew bundle dump --force
 
 # backup kubectl plugins
 $ kubectl krew list > kubectl-krew-plugins.txt
+
+# export Rectangle settings from menu to RectangleConfig.json
+
+# export iterm2 configuration from menu
 ```
