@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -f "`which rvm`" ]; then
   curl -sSL https://get.rvm.io | bash -s stable
