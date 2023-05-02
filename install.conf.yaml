@@ -23,3 +23,4 @@
 - shell:
   - [brew bundle]
   - [kubectl krew install < kubectl-krew-plugins.txt]
+  - [gcloud components install gke-gcloud-auth-plugin]
