@@ -72,6 +72,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(macos kube-ps1)
 
+# enable homebrew zsh autocompletions. This needs to be above the 'source oh-my-sh' line, as that one calls 'compinit'!
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
