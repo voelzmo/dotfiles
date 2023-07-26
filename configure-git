@@ -8,8 +8,8 @@ git config --global alias.ci 'commit -v'
 git config --global alias.flog "log --pretty=full"
 git config --global alias.history 'log --graph --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 git config --global alias.suri 'submodule update --recursive --init --jobs 8'
-# use diff3 for conflicts
-git config --global merge.conflictstyle diff3
+# use zdiff3 for conflicts
+git config --global merge.conflictstyle zdiff3
 
 # use 'ort' merge strategy https://www.scalefactory.com/blog/2021/08/20/configure-git-to-merge-using-ort/
 git config --global pull.twohead ort
