@@ -126,8 +126,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pip=/usr/local/bin/pip3
-alias python=/usr/local/bin/python3
 alias k=kubectl
 
 # gron converts json into greppable pieces. 'ungron' can convert it back
@@ -149,8 +147,13 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # gcloud installation via homebrew
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+# check which python version the gcloud formula currently needs and adapt if necessary https://github.com/Homebrew/homebrew-cask/blob/1c59ea3b3b951c58f495dd07a99d4280ea709a12/Casks/g/google-cloud-sdk.rb#L19C2-L19C36
+export CLOUDSDK_PYTHON="$(brew --prefix python@3.11)/bin/python3.11"
 
 # always have a GCTL_SESSION_ID defined, gardenctl-v2 depends on it
 [ -n "$GCTL_SESSION_ID" ] || [ -n "$TERM_SESSION_ID" ] || export GCTL_SESSION_ID=$(uuidgen)
 
 export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
+
+# put homebrew python and pip on the path
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
