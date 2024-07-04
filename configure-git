@@ -16,3 +16,8 @@ git config --global pull.twohead ort
 
 # use git-credential-manager and store creds in the keychain https://github.com/git-ecosystem/git-credential-manager
 # this is done automatically by the homebrew package, we don't need to fiddle with the .gitconfig here: https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#git-credential-manager
+
+# use https instead of ssh to fetch and pull for all the githubs: https://git-scm.com/docs/git-config#Documentation/git-config.txt-urlltbasegtinsteadOf
+for url in "github.com" "github.wdf.sap.corp" "github.tools.sap";
+  do git config --global url."https://${url}/".insteadOf "git@${url}:";
+done

@@ -28,5 +28,6 @@
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "[python]": {
         "editor.formatOnType": true
-    }
+    },
+    "workbench.editor.empty.hint": "hidden"
 }
