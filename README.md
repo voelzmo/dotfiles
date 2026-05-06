@@ -17,7 +17,7 @@ $ ./install
 # install apps using homebrew. This need to happen after the config files have been copied by the ./install script
 $ brew bundle
 
-# install umlauts with option key layout
+# install umlauts with option key layout. See https://hci.rwth-aachen.de/usgermankeyboard
 $ curl -O -L -J https://hci.rwth-aachen.de/get-attachment/2764?fallback=/files/migrated/files/USGerman-Keyboard-Layout-0.98-Retina.zip&filename=USGerman%20Keyboard%20Layout%200.98%20Retina.zip
 $ unzip USGerman\ Keyboard\ Layout\ 0.98\ Retina.zip
 $ sudo mv USGerman\ Keyboard\ Layout\ 0.98\ Retina/Roman.bundle /Library/Keyboard\ Layouts/
