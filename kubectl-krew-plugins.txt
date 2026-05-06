@@ -1,2 +1,4 @@
+kvaps/node-shell
 oidc-login
+resource-capacity
 view-secret
