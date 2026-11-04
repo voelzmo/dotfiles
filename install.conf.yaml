@@ -17,9 +17,6 @@
       path: gitignore
       force: true
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
-    ~/.vscode/extensions/extensions.json:
-      create: true
-      path: vscode-extensions.json
     ~/Library/Application Support/Code/User/settings.json:
       create: true
       path: vscode-settings.json
