@@ -11,6 +11,11 @@
 - link:
     ~/.zshrc: zshrc
     ~/.zsh_plugins.txt: zsh_plugins.txt
+    # core.excludesfile points here, see configure-git. 'force' replaces a pre-existing plain file;
+    # its contents are already part of the tracked gitignore.
+    ~/.gitignore:
+      path: gitignore
+      force: true
     ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/.vscode/extensions/extensions.json:
       create: true
