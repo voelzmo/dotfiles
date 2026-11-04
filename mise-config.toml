@@ -1,0 +1,4 @@
+# Global mise config, linked to ~/.config/mise/config.toml (see install.conf.yaml).
+# Run 'mise install' to install everything listed here.
+[tools]
+ruby = "3"

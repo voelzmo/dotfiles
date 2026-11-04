@@ -140,6 +140,9 @@ alias ungron="gron --ungron"
 # enable direnv, which auto-loads .envrc files
 eval "$(direnv hook zsh)"
 
+# mise manages tool versions (e.g. ruby, see ~/.config/mise/config.toml)
+eval "$(mise activate zsh)"
+
 # source antidote
 source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 

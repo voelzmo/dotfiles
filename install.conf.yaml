@@ -5,12 +5,18 @@
   - [./install-homebrew.sh, Installing Homebrew]
   - [mkdir -p ~/workspace, Creating ~/workspace]
   - [./configure-git, Setting up gitconfig]
-  - [./install-ruby, Installing rvm and ruby]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
 
 - link:
     ~/.zshrc: zshrc
     ~/.zsh_plugins.txt: zsh_plugins.txt
+    ~/.config/mise/config.toml:
+      create: true
+      path: mise-config.toml
+    # don't install gem documentation, that takes often longer than the gem itself
+    ~/.gemrc:
+      path: gemrc
+      force: true
     # core.excludesfile points here, see configure-git. 'force' replaces a pre-existing plain file;
     # its contents are already part of the tracked gitignore.
     ~/.gitignore:
@@ -23,5 +29,6 @@
 
 - shell:
   - [brew bundle]
+  - [mise install, Installing ruby via mise]
   - [kubectl krew install < kubectl-krew-plugins.txt]
   - [gcloud components install gke-gcloud-auth-plugin]
