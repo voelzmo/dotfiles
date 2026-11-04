@@ -9,15 +9,19 @@ A collection of system settings and installations, maintained using [dotbot](htt
 $ xcode-select --install
 
 # clone this repo
-$ git clone --recursive
+$ git clone --recursive https://github.com/voelzmo/dotfiles.git ~/workspace/dotfiles
+$ cd ~/workspace/dotfiles
 
-# copy dotfiles and configure some things
+# install oh-my-zsh and homebrew, link the config files, then install apps (brew bundle),
+# ruby (mise) and the kubectl/gcloud plugins. Safe to re-run.
 $ ./install
+```
 
-# install apps using homebrew. This need to happen after the config files have been copied by the ./install script
-$ brew bundle
+### Optional: umlauts with option key layout
 
-# install umlauts with option key layout. See https://hci.rwth-aachen.de/usgermankeyboard
+See https://hci.rwth-aachen.de/usgermankeyboard
+
+```sh
 $ curl -O -L -J https://hci.rwth-aachen.de/get-attachment/2764?fallback=/files/migrated/files/USGerman-Keyboard-Layout-0.98-Retina.zip&filename=USGerman%20Keyboard%20Layout%200.98%20Retina.zip
 $ unzip USGerman\ Keyboard\ Layout\ 0.98\ Retina.zip
 $ sudo mv USGerman\ Keyboard\ Layout\ 0.98\ Retina/Roman.bundle /Library/Keyboard\ Layouts/
@@ -30,7 +34,8 @@ $ sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
 ## Backup Instructions
 
 ```sh
-# backup homebrew packages
+# backup homebrew packages. Review the diff afterwards: brew also dumps transitive
+# dependencies as if you had picked them, remove those again.
 $ brew bundle dump --force
 
 # backup kubectl plugins
