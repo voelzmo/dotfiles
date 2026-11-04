@@ -14,7 +14,6 @@ tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
 tap "sikarugir-app/sikarugir"
-tap "skyhook-io/tap"
 tap "universal-ctags/universal-ctags"
 brew "antidote"
 brew "avrdude"
@@ -105,7 +104,6 @@ brew "open-component-model/tap/ocm@0.38.0", link: false
 brew "open-component-model/tap/ocm@0.39.0"
 brew "osx-cross/arm/arm-gcc-bin@8", link: true
 brew "osx-cross/avr/avr-gcc@8", link: true
-brew "skyhook-io/tap/radar"
 brew "starship"
 cask "azure-cli"
 cask "caffeine"
