@@ -100,7 +100,6 @@ brew "stern"
 brew "the_silver_searcher"
 brew "tio"
 brew "tmate"
-brew "tmux"
 brew "tree"
 brew "universal-ctags", args: ["HEAD"]
 brew "viddy"
