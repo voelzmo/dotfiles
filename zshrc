@@ -72,8 +72,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(macos kube-ps1 kubectl)
 
-# enable homebrew zsh autocompletions. This needs to be above the 'source oh-my-sh' line, as that one calls 'compinit'!
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# Initialize homebrew: sets HOMEBREW_PREFIX, PATH, MANPATH and adds the homebrew zsh completions to FPATH.
+# This needs to be above the 'source oh-my-zsh' line, as that one calls 'compinit'!
+# $HOMEBREW_PREFIX is used below instead of calling 'brew --prefix' repeatedly, as each call spawns a ruby process.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,13 +97,13 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 
 # Use GNU binaries instead of macos builtins (e.g. sed, base64)
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-export PATH=$(brew --prefix grep)/libexec/gnubin:$PATH
-export PATH=$(brew --prefix gnu-sed)/libexec/gnubin:$PATH
-export PATH=$(brew --prefix gnu-tar)/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH
 
 # OpenVPN needed for gardener
-export PATH=$(brew --prefix openvpn)/sbin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/openvpn/sbin:$PATH
 
 # GOPATH is needed for 'make generate' in gardener
 export GOPATH=$HOME/go
@@ -135,7 +141,7 @@ alias ungron="gron --ungron"
 eval "$(direnv hook zsh)"
 
 # source antidote
-source $(brew --prefix antidote)/share/antidote/antidote.zsh
+source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
@@ -144,18 +150,18 @@ antidote load
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # gcloud installation via homebrew
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+source "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"
+source "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"
 # check which python version the gcloud formula currently needs and adapt if necessary https://github.com/Homebrew/homebrew-cask/blob/1c59ea3b3b951c58f495dd07a99d4280ea709a12/Casks/g/google-cloud-sdk.rb#L19C2-L19C36
-export CLOUDSDK_PYTHON="$(brew --prefix)/Frameworks/Python.framework/Versions/Current/bin/python3"
+export CLOUDSDK_PYTHON="$HOMEBREW_PREFIX/Frameworks/Python.framework/Versions/Current/bin/python3"
 
 # always have a GCTL_SESSION_ID defined, gardenctl-v2 depends on it
 [ -n "$GCTL_SESSION_ID" ] || [ -n "$TERM_SESSION_ID" ] || export GCTL_SESSION_ID=$(uuidgen)
 
-export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/openssl@1.1/bin:$PATH"
 
 # put homebrew python and pip on the path
-export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Turn homebrew analytics off
