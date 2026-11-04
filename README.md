@@ -12,7 +12,7 @@ $ xcode-select --install
 $ git clone --recursive https://github.com/voelzmo/dotfiles.git ~/workspace/dotfiles
 $ cd ~/workspace/dotfiles
 
-# install oh-my-zsh and homebrew, link the config files, then install apps (brew bundle),
+# install homebrew, link the config files, then install apps (brew bundle),
 # ruby (mise) and the kubectl/gcloud plugins. Safe to re-run.
 $ ./install
 ```
