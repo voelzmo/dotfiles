@@ -110,6 +110,7 @@ brew "osx-cross/arm/arm-gcc-bin@8", link: true
 brew "osx-cross/avr/avr-gcc@8", link: true
 brew "skyhook-io/tap/radar"
 brew "srcclr/srcclr/srcclr"
+brew "starship"
 cask "caffeine"
 cask "docker-desktop"
 cask "fly"

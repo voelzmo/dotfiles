@@ -1,0 +1,22 @@
+# Starship prompt config, linked to ~/.config/starship.toml (see install.conf.yaml).
+# Reference: https://starship.rs/config/
+
+add_newline = false
+
+# kube context first (replaces the old kube-ps1 prefix), then a compact robbyrussell-style prompt
+format = "$kubernetes$directory$git_branch$git_status$character"
+
+# disabled by default in starship
+[kubernetes]
+disabled = false
+format = '[($symbol$context(:$namespace) )]($style)'
+
+[directory]
+truncation_length = 1
+truncate_to_repo = false
+
+[git_branch]
+format = '[$symbol$branch]($style) '
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'

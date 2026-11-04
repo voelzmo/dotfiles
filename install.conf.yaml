@@ -10,6 +10,9 @@
 - link:
     ~/.zshrc: zshrc
     ~/.zsh_plugins.txt: zsh_plugins.txt
+    ~/.config/starship.toml:
+      create: true
+      path: starship.toml
     ~/.config/mise/config.toml:
       create: true
       path: mise-config.toml
