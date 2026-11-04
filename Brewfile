@@ -9,7 +9,6 @@ tap "homeport/tap"
 tap "int128/kubelogin"
 tap "kegworks-app/kegworks"
 tap "microsoft/git"
-tap "open-component-model/tap"
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
@@ -97,11 +96,6 @@ brew "haiperspace/hai/hai"
 brew "hashicorp/tap/vault"
 brew "homeport/tap/dyff"
 brew "int128/kubelogin/kubelogin"
-brew "open-component-model/tap/ocm@0.24.0", link: false
-brew "open-component-model/tap/ocm@0.34.1", link: false
-brew "open-component-model/tap/ocm@0.36.0", link: false
-brew "open-component-model/tap/ocm@0.38.0", link: false
-brew "open-component-model/tap/ocm@0.39.0"
 brew "osx-cross/arm/arm-gcc-bin@8", link: true
 brew "osx-cross/avr/avr-gcc@8", link: true
 brew "starship"
