@@ -157,3 +157,6 @@ export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
 # put homebrew python and pip on the path
 export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Turn homebrew analytics off
+export HOMEBREW_NO_ANALYTICS=1
