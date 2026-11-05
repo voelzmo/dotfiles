@@ -75,6 +75,24 @@ compinit
 # This needs to be after compinit and the vi bindings above, as it binds into both vi keymaps and replaces ctrl+r.
 # '--color=light' is the base scheme for light terminal themes (solarized light).
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --color=light"
+
+# fd is a faster 'find' that respects .gitignore. Use it for ctrl+t, alt+c and ** completion.
+# FZF_CTRL_T_COMMAND/FZF_ALT_C_COMMAND are only set if fd exists, an empty value would disable the key binding.
+if (( $+commands[fd] )); then
+  export FZF_CTRL_T_COMMAND="fd --type f --type d --hidden --follow --exclude .git"
+  export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
+  _fzf_compgen_path() { fd --hidden --follow --exclude .git . "$1" }
+  _fzf_compgen_dir() { fd --type d --hidden --follow --exclude .git . "$1" }
+fi
+
+# bat is a 'cat' with syntax highlighting, used for the file preview of ctrl+t.
+if (( $+commands[bat] )); then
+  export BAT_THEME="Solarized (light)"
+  export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :200 {}'"
+fi
+# alt+c previews the directory content
+export FZF_ALT_C_OPTS="--preview 'ls -1A --color=always {}'"
+
 (( $+commands[fzf] )) && source <(fzf --zsh)
 export PATH="/usr/local/sbin:$PATH"
 
