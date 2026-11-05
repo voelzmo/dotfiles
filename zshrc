@@ -41,9 +41,6 @@ for keymap in viins vicmd; do
   bindkey -M $keymap '^[[1;5D' backward-word
 done
 
-# ctrl+r searches history while typing (vi insert mode has no binding for it), '/' does so in command mode
-bindkey -M viins '^R' history-incremental-search-backward
-
 # 'v' in command mode edits the current command line in $EDITOR
 autoload -Uz edit-command-line
 zle -N edit-command-line
@@ -74,7 +71,11 @@ compinit
 
 #export PATH="/usr/local/kubebuilder/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf: fuzzy finder with ctrl+r (history), ctrl+t (files), alt+c (cd) and ** tab completion.
+# This needs to be after compinit and the vi bindings above, as it binds into both vi keymaps and replaces ctrl+r.
+# '--color=light' is the base scheme for light terminal themes (solarized light).
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --color=light"
+(( $+commands[fzf] )) && source <(fzf --zsh)
 export PATH="/usr/local/sbin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
