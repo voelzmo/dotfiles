@@ -1,103 +1,112 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Initialize homebrew: sets HOMEBREW_PREFIX, PATH, MANPATH and adds the homebrew zsh completions to FPATH.
+# This needs to be above compinit below.
+# $HOMEBREW_PREFIX is used instead of calling 'brew --prefix' repeatedly, as each call spawns a ruby process.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# --- shell options (formerly provided by oh-my-zsh) ---
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# history
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+setopt extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space hist_verify share_history
+# show timestamps in yyyy-mm-dd format
+alias history='fc -li 1'
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# directories
+setopt auto_cd auto_pushd pushd_ignore_dups pushdminus
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -- -='cd -'
+alias md='mkdir -p'
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# vi key bindings: start in insert mode, <Esc> switches to command mode (starship shows the mode in the prompt).
+# This needs to stay above the other bindkey lines, as plain 'bindkey' binds into the active keymap.
+bindkey -v
+# only wait 10ms after <Esc> instead of the default 400ms
+KEYTIMEOUT=1
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# up/down arrows search history by the prefix typed so far, ctrl+arrows move by word
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+for keymap in viins vicmd; do
+  bindkey -M $keymap '^[[A' up-line-or-beginning-search
+  bindkey -M $keymap '^[[B' down-line-or-beginning-search
+  bindkey -M $keymap '^[[1;5C' forward-word
+  bindkey -M $keymap '^[[1;5D' backward-word
+done
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# 'v' in command mode edits the current command line in $EDITOR
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
 
-# Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 28
+alias ls='ls --color=auto'
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# --- completion ---
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# completion menu, case- and hyphen-insensitive matching
+setopt auto_menu complete_in_word always_to_end
+unsetopt menu_complete flowcontrol
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' cache-path "$HOME/.cache/zsh"
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# the omz kubectl plugin (see zsh_plugins.txt) writes its completion file into $ZSH_CACHE_DIR/completions
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="yyyy-mm-dd"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(macos kube-ps1 kubectl)
-
-# enable homebrew zsh autocompletions. This needs to be above the 'source oh-my-sh' line, as that one calls 'compinit'!
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-source $ZSH/oh-my-zsh.sh
+# compinit needs to run before antidote loads the plugins, as some of them call 'compdef'
+autoload -Uz compinit
+compinit
 
 # User configuration
 
-# set kube-ps1 prompt
-PROMPT='$(kube_ps1)'$PROMPT
-
 #export PATH="/usr/local/kubebuilder/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf: fuzzy finder with ctrl+r (history), ctrl+t (files), alt+c (cd) and ** tab completion.
+# This needs to be after compinit and the vi bindings above, as it binds into both vi keymaps and replaces ctrl+r.
+# '--color=light' is the base scheme for light terminal themes (solarized light).
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --color=light"
+
+# fd is a faster 'find' that respects .gitignore. Use it for ctrl+t, alt+c and ** completion.
+# FZF_CTRL_T_COMMAND/FZF_ALT_C_COMMAND are only set if fd exists, an empty value would disable the key binding.
+if (( $+commands[fd] )); then
+  export FZF_CTRL_T_COMMAND="fd --type f --type d --hidden --follow --exclude .git"
+  export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
+  _fzf_compgen_path() { fd --hidden --follow --exclude .git . "$1" }
+  _fzf_compgen_dir() { fd --type d --hidden --follow --exclude .git . "$1" }
+fi
+
+# bat is a 'cat' with syntax highlighting, used for the file preview of ctrl+t.
+if (( $+commands[bat] )); then
+  export BAT_THEME="Solarized (light)"
+  export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :200 {}'"
+fi
+# alt+c previews the directory content
+export FZF_ALT_C_OPTS="--preview 'ls -1A --color=always {}'"
+
+(( $+commands[fzf] )) && source <(fzf --zsh)
 export PATH="/usr/local/sbin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$PATH:$HOME/go/bin"
 
 # Use GNU binaries instead of macos builtins (e.g. sed, base64)
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-export PATH=$(brew --prefix grep)/libexec/gnubin:$PATH
-export PATH=$(brew --prefix gnu-sed)/libexec/gnubin:$PATH
-export PATH=$(brew --prefix gnu-tar)/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH
 
 # OpenVPN needed for gardener
-export PATH=$(brew --prefix openvpn)/sbin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/openvpn/sbin:$PATH
 
 # GOPATH is needed for 'make generate' in gardener
 export GOPATH=$HOME/go
@@ -134,8 +143,11 @@ alias ungron="gron --ungron"
 # enable direnv, which auto-loads .envrc files
 eval "$(direnv hook zsh)"
 
+# mise manages tool versions (e.g. ruby, see ~/.config/mise/config.toml)
+eval "$(mise activate zsh)"
+
 # source antidote
-source $(brew --prefix antidote)/share/antidote/antidote.zsh
+source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
@@ -144,16 +156,22 @@ antidote load
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # gcloud installation via homebrew
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+source "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"
+source "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"
 # check which python version the gcloud formula currently needs and adapt if necessary https://github.com/Homebrew/homebrew-cask/blob/1c59ea3b3b951c58f495dd07a99d4280ea709a12/Casks/g/google-cloud-sdk.rb#L19C2-L19C36
-export CLOUDSDK_PYTHON="$(brew --prefix)/Frameworks/Python.framework/Versions/Current/bin/python3"
+export CLOUDSDK_PYTHON="$HOMEBREW_PREFIX/Frameworks/Python.framework/Versions/Current/bin/python3"
 
 # always have a GCTL_SESSION_ID defined, gardenctl-v2 depends on it
 [ -n "$GCTL_SESSION_ID" ] || [ -n "$TERM_SESSION_ID" ] || export GCTL_SESSION_ID=$(uuidgen)
 
-export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/openssl@1.1/bin:$PATH"
 
 # put homebrew python and pip on the path
-export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Turn homebrew analytics off
+export HOMEBREW_NO_ANALYTICS=1
+
+# starship prompt, configured in ~/.config/starship.toml. Keep this last.
+(( $+commands[starship] )) && eval "$(starship init zsh)"

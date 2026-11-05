@@ -1,26 +1,36 @@
 - clean: ['~']
 
 - shell:
-  - [./install-oh-my-zsh.sh, Installing oh-my-zsh]
   - [./install-homebrew.sh, Installing Homebrew]
   - [mkdir -p ~/workspace, Creating ~/workspace]
   - [./configure-git, Setting up gitconfig]
-  - [./install-ruby, Installing rvm and ruby]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
 
 - link:
     ~/.zshrc: zshrc
     ~/.zsh_plugins.txt: zsh_plugins.txt
-    ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
-    ~/.tmux.conf: tmux.conf
-    ~/.vscode/extensions/extensions.json:
+    ~/.config/starship.toml:
       create: true
-      path: vscode-extensions.json
+      path: starship.toml
+    ~/.config/mise/config.toml:
+      create: true
+      path: mise-config.toml
+    # don't install gem documentation, that takes often longer than the gem itself
+    ~/.gemrc:
+      path: gemrc
+      force: true
+    # core.excludesfile points here, see configure-git. 'force' replaces a pre-existing plain file;
+    # its contents are already part of the tracked gitignore.
+    ~/.gitignore:
+      path: gitignore
+      force: true
+    ~/Library/Preferences/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/Library/Application Support/Code/User/settings.json:
       create: true
       path: vscode-settings.json
 
 - shell:
   - [brew bundle]
+  - [mise install, Installing ruby via mise]
   - [kubectl krew install < kubectl-krew-plugins.txt]
   - [gcloud components install gke-gcloud-auth-plugin]

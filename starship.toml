@@ -1,0 +1,33 @@
+# Starship prompt config, linked to ~/.config/starship.toml (see install.conf.yaml).
+# Reference: https://starship.rs/config/
+
+add_newline = false
+
+# kube context first (replaces the old kube-ps1 prefix), then a compact robbyrussell-style prompt
+format = "$kubernetes$directory$git_branch$git_status$character"
+
+# Colours are chosen for a light theme (solarized light): ANSI white is nearly invisible there,
+# so the punctuation uses the terminal's default foreground, which also works on the dark profile.
+[kubernetes]
+disabled = false  # starship disables this module by default
+symbol = '⎈'
+format = '[\(]()[$symbol](blue)[|]()[$context](red)([:]()[$namespace](cyan))[\)]() '
+
+[directory]
+truncation_length = 1
+truncate_to_repo = false
+
+[git_branch]
+format = '[$symbol$branch]($style) '
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+
+# show a different marker in vi command mode
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold green)'
+vimcmd_replace_symbol = '[❮](bold purple)'
+vimcmd_replace_one_symbol = '[❮](bold purple)'
+vimcmd_visual_symbol = '[❮](bold yellow)'
