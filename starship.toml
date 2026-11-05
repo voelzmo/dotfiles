@@ -6,10 +6,12 @@ add_newline = false
 # kube context first (replaces the old kube-ps1 prefix), then a compact robbyrussell-style prompt
 format = "$kubernetes$directory$git_branch$git_status$character"
 
-# disabled by default in starship
+# Colours are chosen for a light theme (solarized light): ANSI white is nearly invisible there,
+# so the punctuation uses the terminal's default foreground, which also works on the dark profile.
 [kubernetes]
-disabled = false
-format = '[($symbol$context(:$namespace) )]($style)'
+disabled = false  # starship disables this module by default
+symbol = '⎈'
+format = '[\(]()[$symbol](blue)[|]()[$context](red)([:]()[$namespace](cyan))[\)]() '
 
 [directory]
 truncation_length = 1
