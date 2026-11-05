@@ -24,15 +24,30 @@ alias -g ....='../../..'
 alias -- -='cd -'
 alias md='mkdir -p'
 
-# emacs key bindings, up/down arrow search history by prefix, ctrl+arrows move by word
-bindkey -e
+# vi key bindings: start in insert mode, <Esc> switches to command mode (starship shows the mode in the prompt).
+# This needs to stay above the other bindkey lines, as plain 'bindkey' binds into the active keymap.
+bindkey -v
+# only wait 10ms after <Esc> instead of the default 400ms
+KEYTIMEOUT=1
+
+# up/down arrows search history by the prefix typed so far, ctrl+arrows move by word
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey '^[[A' up-line-or-beginning-search
-bindkey '^[[B' down-line-or-beginning-search
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
+for keymap in viins vicmd; do
+  bindkey -M $keymap '^[[A' up-line-or-beginning-search
+  bindkey -M $keymap '^[[B' down-line-or-beginning-search
+  bindkey -M $keymap '^[[1;5C' forward-word
+  bindkey -M $keymap '^[[1;5D' backward-word
+done
+
+# ctrl+r searches history while typing (vi insert mode has no binding for it), '/' does so in command mode
+bindkey -M viins '^R' history-incremental-search-backward
+
+# 'v' in command mode edits the current command line in $EDITOR
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
 
 alias ls='ls --color=auto'
 
