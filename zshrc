@@ -161,8 +161,9 @@ source "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"
 # check which python version the gcloud formula currently needs and adapt if necessary https://github.com/Homebrew/homebrew-cask/blob/1c59ea3b3b951c58f495dd07a99d4280ea709a12/Casks/g/google-cloud-sdk.rb#L19C2-L19C36
 export CLOUDSDK_PYTHON="$HOMEBREW_PREFIX/Frameworks/Python.framework/Versions/Current/bin/python3"
 
-# always have a GCTL_SESSION_ID defined, gardenctl-v2 depends on it
-[ -n "$GCTL_SESSION_ID" ] || [ -n "$TERM_SESSION_ID" ] || export GCTL_SESSION_ID=$(uuidgen)
+# gardenctl shortcuts (g, gtv, gk, gp, ...), completion and GCTL_SESSION_ID, which gardenctl-v2 depends on.
+# Must come after compinit.
+(( $+commands[gardenctl] )) && source <(gardenctl rc zsh)
 
 export PATH="$HOMEBREW_PREFIX/opt/openssl@1.1/bin:$PATH"
 
