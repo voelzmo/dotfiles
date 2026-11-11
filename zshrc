@@ -39,7 +39,14 @@ for keymap in viins vicmd; do
   bindkey -M $keymap '^[[B' down-line-or-beginning-search
   bindkey -M $keymap '^[[1;5C' forward-word
   bindkey -M $keymap '^[[1;5D' backward-word
+  # forward delete (fn+backspace) sends <Esc>[3~, which would otherwise be read as <Esc> and leave insert mode
+  bindkey -M $keymap '^[[3~' delete-char
 done
+# backspace: the vi variant refuses to delete before the point where insert mode was entered
+# option+backspace (<Esc><DEL>) deletes a word, instead of being split into <Esc> and backspace
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
+bindkey -M viins '^[^?' backward-kill-word
 
 # 'v' in command mode edits the current command line in $EDITOR
 autoload -Uz edit-command-line
