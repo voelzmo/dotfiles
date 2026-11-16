@@ -45,5 +45,6 @@
 - shell:
   - [brew bundle]
   - [mise install, Installing ruby via mise]
+  - [./macos-defaults.sh, Applying macOS defaults]
   - [kubectl krew install < kubectl-krew-plugins.txt]
   - [gcloud components install gke-gcloud-auth-plugin]
