@@ -12,8 +12,9 @@ $ xcode-select --install
 $ git clone --recursive https://github.com/voelzmo/dotfiles.git ~/workspace/dotfiles
 $ cd ~/workspace/dotfiles
 
-# install homebrew, link the config files, then install apps (brew bundle),
-# ruby (mise) and the kubectl/gcloud plugins. Safe to re-run.
+# install homebrew, clone voelzmo/k9s-plugins to ~/workspace and link the config files
+# (including the k9s plugins), then install apps (brew bundle), ruby (mise) and the
+# kubectl/gcloud plugins. Safe to re-run.
 $ ./install
 ```
 

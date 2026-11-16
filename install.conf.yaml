@@ -3,6 +3,8 @@
 - shell:
   - [./install-homebrew.sh, Installing Homebrew]
   - [mkdir -p ~/workspace, Creating ~/workspace]
+  # a plain clone, not a submodule: this is where the plugins are developed. Never pulled here.
+  - [test -d ~/workspace/k9s-plugins || git clone https://github.com/voelzmo/k9s-plugins.git ~/workspace/k9s-plugins, Cloning k9s-plugins]
   - [./configure-git, Setting up gitconfig]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
 
@@ -28,6 +30,11 @@
     ~/Library/Application Support/Code/User/settings.json:
       create: true
       path: vscode-settings.json
+    # k9s loads every file from this directory. Symlinking from the clone makes 'git pull' there update them.
+    ~/Library/Application Support/k9s/plugins/:
+      create: true
+      glob: true
+      path: ~/workspace/k9s-plugins/plugins/*.yaml
 
 - shell:
   - [brew bundle]
