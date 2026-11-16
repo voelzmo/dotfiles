@@ -58,6 +58,11 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screens
 # no drop shadow around window screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+echo 'Activity Monitor'
+# show all processes. 100 is what the app writes for View > All Processes, not the 0 older guides use.
+# The sort order isn't set here: it isn't a plain key, the app stores it in an opaque binary blob.
+defaults write com.apple.ActivityMonitor ShowCategory -int 100
+
 echo 'iTerm'
 # load the settings from com.googlecode.iterm2.plist in this repo instead of ~/Library/Preferences.
 # iTerm reads this on start, so restart it afterwards. It is not restarted here, this script may run inside it.
