@@ -38,5 +38,18 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict-add Privileges -bool t
 # show ~/Library
 chflags nohidden ~/Library
 
+echo 'General UI'
+# open the save and print dialogs expanded
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+# save new documents to disk, not to iCloud
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# no delay before the file name shows up when hovering over a window title
+defaults write NSGlobalDomain NSToolbarTitleViewRolloverDelay -float 0
+# quit the printer app once the print jobs are done
+defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
+
 # apps only reread their preferences on start, launchd restarts them right away
 killall Dock Finder || true
