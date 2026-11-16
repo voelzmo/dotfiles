@@ -51,5 +51,13 @@ defaults write NSGlobalDomain NSToolbarTitleViewRolloverDelay -float 0
 # quit the printer app once the print jobs are done
 defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
 
+echo 'Screenshots'
+# macOS doesn't create the folder and silently falls back to the Desktop when it is missing
+mkdir -p "${HOME}/Desktop/Screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
+# no drop shadow around window screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
 # apps only reread their preferences on start, launchd restarts them right away
-killall Dock Finder || true
+# (SystemUIServer is the process behind the screenshot tool)
+killall Dock Finder SystemUIServer || true
