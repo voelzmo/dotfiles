@@ -23,5 +23,20 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock mineffect -string scale
 defaults write com.apple.dock launchanim -bool false
 
-# apps only reread their preferences on start, launchd restarts the Dock right away
-killall Dock || true
+echo 'Finder'
+# files: always show extensions (also avoids being fooled by invoice.pdf.exe) and don't warn when renaming them
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+# folders first when sorting by name, and search the current folder instead of the whole Mac
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder FXDefaultSearchScope -string SCcf
+# don't litter network shares and USB sticks with .DS_Store files
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+# also expand the "Sharing & Permissions" pane in Get Info. Adds to the other expanded panes instead of replacing them.
+defaults write com.apple.finder FXInfoPanesExpanded -dict-add Privileges -bool true
+# show ~/Library
+chflags nohidden ~/Library
+
+# apps only reread their preferences on start, launchd restarts them right away
+killall Dock Finder || true
