@@ -1,1 +1,3 @@
 .DS_Store
+# iTerm's "Export All Settings and Data" archive: contains the AI chat database, saved state and keychain entries
+*.itermexport

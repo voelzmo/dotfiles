@@ -45,5 +45,7 @@ $ kubectl krew list > kubectl-krew-plugins.txt
 
 # export Rectangle settings from menu to RectangleConfig.json
 
-# export iterm2 configuration from menu
+# iterm2 loads its settings from com.googlecode.iterm2.plist in this repo (macos-defaults.sh sets that up).
+# Settings > General > Settings controls when it writes changes back. Review the diff before committing.
+# Don't use "Export All Settings and Data" for this: it includes the AI chat database and keychain entries.
 ```

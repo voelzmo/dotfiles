@@ -58,6 +58,12 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screens
 # no drop shadow around window screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+echo 'iTerm'
+# load the settings from com.googlecode.iterm2.plist in this repo instead of ~/Library/Preferences.
+# iTerm reads this on start, so restart it afterwards. It is not restarted here, this script may run inside it.
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 # apps only reread their preferences on start, launchd restarts them right away
 # (SystemUIServer is the process behind the screenshot tool)
 killall Dock Finder SystemUIServer || true
