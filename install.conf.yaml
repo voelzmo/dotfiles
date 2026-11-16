@@ -7,6 +7,12 @@
   - [test -d ~/workspace/k9s-plugins || git clone https://github.com/voelzmo/k9s-plugins.git ~/workspace/k9s-plugins, Cloning k9s-plugins]
   - [./configure-git, Setting up gitconfig]
   - [./brew-auto-update/install.sh, Installing automated brew upgrade]
+  # needs sudo on the first run, hence stdin. The login window step is manual, see README.
+  - command: ./install-keyboard-layout.sh
+    description: Installing the umlauts keyboard layout
+    stdin: true
+    stdout: true
+    stderr: true
 
 - link:
     ~/.zshrc: zshrc

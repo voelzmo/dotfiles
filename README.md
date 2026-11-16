@@ -18,18 +18,19 @@ $ cd ~/workspace/dotfiles
 $ ./install
 ```
 
-### Optional: umlauts with option key layout
+### Umlauts with option key layout
 
 See https://hci.rwth-aachen.de/usgermankeyboard
 
-```sh
-$ curl -O -L -J https://hci.rwth-aachen.de/get-attachment/2764?fallback=/files/migrated/files/USGerman-Keyboard-Layout-0.98-Retina.zip&filename=USGerman%20Keyboard%20Layout%200.98%20Retina.zip
-$ unzip USGerman\ Keyboard\ Layout\ 0.98\ Retina.zip
-$ sudo mv USGerman\ Keyboard\ Layout\ 0.98\ Retina/Roman.bundle /Library/Keyboard\ Layouts/
-$ rm -rf USGerman\ Keyboard\ Layout\ 0.98\ Retina
+`./install` downloads the layout (checksum-verified) and installs it to `/Library/Keyboard Layouts`,
+which asks for your password on the first run. Two manual steps remain, because macOS only offers
+the layout after a re-login:
 
-# change default login keyboard
-$ sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
+1. Log out and in, then add the layout under System Settings > Keyboard > Input Sources.
+2. Optionally make the login window use it as well:
+
+```sh
+$ ./install-keyboard-layout.sh --login-window
 ```
 
 ## Backup Instructions
