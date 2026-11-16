@@ -54,7 +54,16 @@ defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
 echo 'Screenshots'
 # macOS doesn't create the folder and silently falls back to the Desktop when it is missing
 mkdir -p "${HOME}/Desktop/Screenshots"
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
+# newer macOS keeps one location per kind and ignores the plain 'location' for screenshots. Found by
+# changing it in Cmd-Shift-5 > Options and diffing the preferences. macOS stores it with a literal ~.
+# shellcheck disable=SC2088
+defaults write com.apple.screencapture location-screenshot -string '~/Desktop/Screenshots'
+# screen recordings go to the same folder
+# shellcheck disable=SC2088
+defaults write com.apple.screencapture location-screenrecording -string '~/Desktop/Screenshots'
+# older macOS only knows this one
+# shellcheck disable=SC2088
+defaults write com.apple.screencapture location -string '~/Desktop/Screenshots'
 # no drop shadow around window screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
@@ -70,5 +79,4 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$(cd "$(dirname 
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 # apps only reread their preferences on start, launchd restarts them right away
-# (SystemUIServer is the process behind the screenshot tool)
-killall Dock Finder SystemUIServer || true
+killall Dock Finder || true
